@@ -44,6 +44,20 @@ Calcula el total de horas asignadas a cada empleado en sus cargos.
 - `dni`: Documento del empleado.
 - `nombre_completo`: Nombre completo del empleado.
 - `total_hs`: Total de horas asignadas.
+
+### 3. ESTADO ACTUAL DEL CARGO: `vw_estado_cargo`    
+
+**Descripción:**    
+Muestra el estado de cada cargo (OCUPADO o VACANTE) y su relación con empleados, junto con detalles adicionales sobre las horas y la denominación del cargo.
+
+**Campos:**
+- `id_empleado`: Identificador único del empleado.
+- `nombre_completo`: Nombre del empleado.
+- `dni`: Documento del empleado.
+- `id_cargo`: Identificador único del cargo.
+- `denominacion`: Denominación del cargo.
+- `horas`: Cantidad de horas asociadas al cargo.
+- `estado_cargo`: Estado del cargo (OCUPADO o VACANTE).
   
 ### :clipboard: TRIGGERS
 ### 1. VERIFICADOR DE INCOMPATIBILIDAD: `tg_incomp_emp`  
