@@ -25,9 +25,9 @@ Por otro lado se presenta la carpeta `Objetos`, la cual contiene los scripts de 
 ### STORE PROCEDURES
  
 
-### FUNCTIONS - Funciones Incluidas
-Funciones SQL diseñadas para la gestión de docentes en un sistema escolar. 
-A continuación, se detalla la funcionalidad de cada función incluida. 
+### FUNCTIONS - Funciones Incluidas 
+Funciones SQL diseñadas para la gestión de docentes en un sistema escolar.  
+A continuación, se detalla la funcionalidad de cada función incluida.  
 
 ### 1. `fx_empleado_horas`      
 **Descripción:**             
