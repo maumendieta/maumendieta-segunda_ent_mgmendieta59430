@@ -71,6 +71,8 @@ Lista empleados según el área en la que trabajan, agrupados por las escuelas a
 - `nombre_completo`: Nombre completo del empleado.
 - `area_escuela`: Nombre del área de trabajo.
 - `escuela`: Nombre de la escuela asociada al área.
+
+---
   
 ### :clipboard: TRIGGERS
 ### 1. VERIFICADOR DE INCOMPATIBILIDAD: `tg_incomp_emp`  
@@ -111,8 +113,29 @@ Se lanza un mensaje de error: `"NO SE PUEDE DESIGNAR REEMPLAZANTE SIN TITULAR DE
 **Uso:**   
 Este trigger asegura la consistencia en la gestión de cargos, garantizando que los reemplazantes solo puedan ser asignados a cargos ocupados por titulares.
 
+---
+
 ### :clipboard: STORE PROCEDURES
- 
+
+## 📜 PROCEDIMIENTO - BAJA EMPLEADO: `pd_baja_empleado`
+
+### Descripción
+Este procedimiento actualiza la fecha de baja y agrega un motivo detallado en el registro de un empleado en la tabla `empleado`. Utiliza la función `fx_mot_baja` para determinar el texto descriptivo del motivo de baja y el procedimiento `pd_busca_empleado` para localizar al empleado por su DNI.
+
+### Parámetros de Entrada
+- `emp_dni` *(INT)*: El Documento Nacional de Identidad del empleado a dar de baja.  
+- `baja` *(DATE)*: La fecha en que se dará de baja al empleado.  
+- `motivo` *(INT)*: Código numérico que representa el motivo de la baja.  
+ `pd_busca_empleado`**: Busca al empleado y devuelve su ID mediante una variable de salida.  
+
+### Funcionamiento
+1. Llama al procedimiento `pd_busca_empleado` para localizar el `id_empleado` asociado al DNI proporcionado.  
+2. Usa la función `fx_mot_baja` para obtener el motivo textual basado en el código proporcionado.  
+3. Actualiza el registro del empleado en la tabla `empleado`, estableciendo:
+   - La fecha de baja (`fecha_baja`).
+   - El motivo descriptivo en el campo `observaciones`.
+
+--- 
 
 ### :clipboard: FUNCTIONS - Funciones Incluidas 
 
@@ -158,7 +181,6 @@ Este trigger asegura la consistencia en la gestión de cargos, garantizando que 
                    / 10 a 15 años: 1.0%***      
                    / 15 a 20 años: 1.25%***      
                    / Más de 20 años: 1.5%***      
-
 
 ### 4. MOTIVO DE BAJA: `fx_mot_baja`
 **Descripción:**      
