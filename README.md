@@ -21,8 +21,6 @@ Por otro lado se presenta la carpeta `Objetos`, la cual contiene los scripts de 
 ### VISTAS
 
 ### TRIGGERS
-
-📂 Triggers Incluidos
 ### 1. `tg_incomp_emp`  
 **Descripción:**  
 Este trigger controla la incompatibilidad horaria al supervisar la cantidad de horas activas de un empleado antes de asignar un nuevo cargo.
@@ -58,9 +56,6 @@ Este trigger asegura la consistencia en la gestión de cargos, garantizando que 
  
 
 ### FUNCTIONS - Funciones Incluidas 
-Funciones SQL diseñadas para la gestión de docentes en un sistema escolar.  
-A continuación, se detalla la funcionalidad de cada función incluida.  
-
 ### 1. `fx_empleado_horas`      
 **Descripción:**             
       - Calcula la cantidad total de horas asignadas a un docente según su número de documento (DNI).        
