@@ -117,6 +117,21 @@ Este trigger asegura la consistencia en la gestión de cargos, garantizando que 
 
 ### :clipboard: STORE PROCEDURES
 
+## 📜 PROCEDIMIENTO - BUSCA EMPLEADO: `pd_busca_empleado`
+
+### Descripción
+Este procedimiento busca el ID de un empleado en la tabla `empleado` utilizando su DNI como referencia. Es útil como paso intermedio en otras operaciones que requieren el `id_empleado` para actualizar o consultar información relacionada.
+
+### Parámetros
+- **Entrada (`emp_dni`)**: DNI del empleado que se desea buscar. *(Tipo: `INT`)*  
+- **Salida (`emp_id`)**: ID del empleado encontrado. *(Tipo: `INT`)*  
+
+### Funcionamiento
+1. Realiza una consulta en la tabla `empleado` para encontrar el registro que coincida con el DNI proporcionado.  
+2. Si se encuentra un empleado con el DNI especificado, su `id_empleado` se asigna a la variable de salida `emp_id`.  
+3. En caso de no encontrar un resultado, `emp_id` no será modificado (puede ser manejado por lógica externa).
+
+
 ## 📜 PROCEDIMIENTO - BAJA EMPLEADO: `pd_baja_empleado`
 
 ### Descripción
