@@ -16,25 +16,20 @@ La entrega está organizada en Carpetas, para poder organizar el trabajo realiza
 Por un lado se encuentra la carpeta `Inserts` que contiene los Script de inserción y los archivos `.CSV` que se utilizaron para la carga.
 Por otro lado se presenta la carpeta `Objetos`, la cual contiene los scripts de creación de Triggers, Procedimientos, Vistas y Funciones.
 
-## OBJETOS
+## 📂OBJETOS
+
+### VISTAS
 
 ### TRIGGERS
-#### 
-#### 
-#### 
-#### 
+
 
 ### STORE PROCEDURES
-####
-####
-####
-#### 
-#### 
+ 
 
 ### FUNCTIONS
 Funciones SQL diseñadas para la gestión de docentes en un sistema escolar, implementadas en MySQL. A continuación, se detalla la funcionalidad de cada función incluida.
 
-## 📂 Funciones Incluidas
+## Funciones Incluidas
 
 ### 1. `fx_empleado_horas`      
 **Descripción:**             
@@ -63,11 +58,11 @@ Funciones SQL diseñadas para la gestión de docentes en un sistema escolar, imp
       _dni (INT): Número de documento del docente.            
 **Devuelve:** Porcentaje de antigüedad (FLOAT).      
       Escala de porcentajes:      
-                   - ***0 a 5 años: 0.5%***      
-                   - ***5 a 10 años: 0.75%***      
-                   - ***10 a 15 años: 1.0%***      
-                   - ***15 a 20 años: 1.25%***      
-                   - ***Más de 20 años: 1.5%***      
+                   / 0 a 5 años: 0.5%***      
+                   / 5 a 10 años: 0.75%***      
+                   / 10 a 15 años: 1.0%***      
+                   / 15 a 20 años: 1.25%***      
+                   / Más de 20 años: 1.5%***      
 
 ### 4. fx_mot_baja
 **Descripción:**      
