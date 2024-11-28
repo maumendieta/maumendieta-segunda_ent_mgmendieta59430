@@ -33,6 +33,35 @@ BEGIN
     END IF;
 END //
 
+        
+-- Este Trigger controla si hay un empleado designado como titular en el cargo para poder designar un reemplazante en el mismo
+
+DELIMITER //
+DROP TRIGGER IF EXISTS liqui_escuela.tg_des_reemp //
+
+CREATE TRIGGER liqui_escuela.tg_des_reemp
+BEFORE INSERT 
+        ON liqui_escuela.emp_cargo
+        FOR EACH ROW
+BEGIN
+    -- Declaración de variables
+    DECLARE msg VARCHAR(255) DEFAULT "NO SE PUEDE DESIGNAR REEMPLAZANTE SIN TITULAR DESIGNADO";
+    DECLARE _estado_cgo VARCHAR(50);
+
+    -- Obtiene el estado actual del cargo (OCUPADO O VACANTE)
+    SELECT vista.estado_cargo INTO _estado_cgo
+    FROM liqui_escuela.vw_estado_cargo AS vista
+    WHERE vista.id_cargo = NEW.id_cargo;
+
+    -- EN CASO DE QUE EL CARGO ESTE VACANTE, NO SE PODRÁ DESIGNAR REEMPLAZANTE DEVUELVE MENSAJE DE ERROR
+    CASE WHEN _estado_cgo LIKE 'vacante' THEN
+            IF NEW.id_sit_revista = 3 THEN
+                            SIGNAL SQLSTATE '45000' 
+                            SET MESSAGE_TEXT = msg;
+            END IF;
+    END CASE;            
+END //            
+
 
 
 
