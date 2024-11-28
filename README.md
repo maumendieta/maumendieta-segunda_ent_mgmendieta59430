@@ -34,6 +34,7 @@ Lista a los empleados agrupados por el banco en el que tienen su cuenta. Incluye
 - `sucursal_banco`: Sucursal del banco.  
 - `cuenta_banco`: Número de cuenta bancaria.  
 
+
 ### 2. CANTIDAD DE HORAS POR EMPLEADO: `vw_horasxemp`  
 
 **Descripción:**  
@@ -44,6 +45,7 @@ Calcula el total de horas asignadas a cada empleado en sus cargos.
 - `dni`: Documento del empleado.
 - `nombre_completo`: Nombre completo del empleado.
 - `total_hs`: Total de horas asignadas.
+
 
 ### 3. ESTADO ACTUAL DEL CARGO: `vw_estado_cargo`    
 
@@ -58,6 +60,7 @@ Muestra el estado de cada cargo (OCUPADO o VACANTE) y su relación con empleados
 - `denominacion`: Denominación del cargo.
 - `horas`: Cantidad de horas asociadas al cargo.
 - `estado_cargo`: Estado del cargo (OCUPADO o VACANTE).
+
 
 ### 4. EMPLEADOS POR AREA: `vw_empleadoxarea`
 
@@ -112,6 +115,7 @@ Este trigger asegura la consistencia en la gestión de cargos, garantizando que 
  
 
 ### :clipboard: FUNCTIONS - Funciones Incluidas 
+
 ### 1. CALCULA LA CANTIDAD DE HORAS POR EMPLEADO: `fx_empleado_horas`      
 **Descripción:**             
       - Calcula la cantidad total de horas asignadas a un docente según su número de documento (DNI).        
@@ -125,6 +129,7 @@ Este trigger asegura la consistencia en la gestión de cargos, garantizando que 
 **Control de errores:**                    
       - Si el docente no existe, lanza un error con el mensaje: `"DOCENTE INEXISTENTE"`.      
 
+
 ### 2. CALCULA ANTIGUEDAD DEL EMPLEADO: `fx_calc_ant`      
 **Descripción:**          
     - Calcula la antigüedad en años de un docente a partir de su fecha de ingreso.      
@@ -137,6 +142,7 @@ Este trigger asegura la consistencia en la gestión de cargos, garantizando que 
 
 **Notas:**          
     - Si no hay fecha de ingreso registrada, devuelve `NULL`.      
+
 
 ### 3. PORCENTAJE DE ANTIGUEDAD: `fx_porc_ant`      
 **Descripción:**      
@@ -152,6 +158,7 @@ Este trigger asegura la consistencia en la gestión de cargos, garantizando que 
                    / 10 a 15 años: 1.0%***      
                    / 15 a 20 años: 1.25%***      
                    / Más de 20 años: 1.5%***      
+
 
 ### 4. MOTIVO DE BAJA: `fx_mot_baja`
 **Descripción:**      
