@@ -18,9 +18,9 @@ Por otro lado se presenta la carpeta `Objetos`, la cual contiene los scripts de 
 
 ## 📂OBJETOS
 
-### VISTAS
+### :clipboard: VISTAS
 
-### TRIGGERS
+### :clipboard: TRIGGERS
 ### 1. `tg_incomp_emp`  
 **Descripción:**  
 Este trigger controla la incompatibilidad horaria al supervisar la cantidad de horas activas de un empleado antes de asignar un nuevo cargo.
@@ -52,10 +52,10 @@ Se lanza un mensaje de error: `"NO SE PUEDE DESIGNAR REEMPLAZANTE SIN TITULAR DE
 **Uso:**   
 Este trigger asegura la consistencia en la gestión de cargos, garantizando que los reemplazantes solo puedan ser asignados a cargos ocupados por titulares.
 
-### STORE PROCEDURES
+### :clipboard: STORE PROCEDURES
  
 
-### FUNCTIONS - Funciones Incluidas 
+### :clipboard: FUNCTIONS - Funciones Incluidas 
 ### 1. `fx_empleado_horas`      
 **Descripción:**             
       - Calcula la cantidad total de horas asignadas a un docente según su número de documento (DNI).        
