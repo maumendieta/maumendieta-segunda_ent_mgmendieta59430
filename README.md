@@ -58,6 +58,16 @@ Muestra el estado de cada cargo (OCUPADO o VACANTE) y su relación con empleados
 - `denominacion`: Denominación del cargo.
 - `horas`: Cantidad de horas asociadas al cargo.
 - `estado_cargo`: Estado del cargo (OCUPADO o VACANTE).
+
+### 4. EMPLEADOS POR AREA: `vw_empleadoxarea`
+
+**Descripción:**    
+Lista empleados según el área en la que trabajan, agrupados por las escuelas a las que pertenecen.
+
+**Campos:**    
+- `nombre_completo`: Nombre completo del empleado.
+- `area_escuela`: Nombre del área de trabajo.
+- `escuela`: Nombre de la escuela asociada al área.
   
 ### :clipboard: TRIGGERS
 ### 1. VERIFICADOR DE INCOMPATIBILIDAD: `tg_incomp_emp`  
