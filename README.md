@@ -94,7 +94,7 @@ Si el límite es excedido, genera un error con el mensaje: `"El agente, con esta
 **Uso:**    
 Este trigger garantiza que un empleado no exceda las horas máximas asignadas al momento de ser designado en un nuevo cargo.
 
-### 2. `tg_des_reemp`
+### 2. INSPECCIONA LA DESIGNACION DE UN REEMPLAZANTE: `tg_des_reemp`
 
 **Descripción:**  
 Este trigger impide la designación de un reemplazante en un cargo si no hay un titular previamente asignado.
