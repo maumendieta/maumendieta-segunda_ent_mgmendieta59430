@@ -63,9 +63,21 @@ Funciones SQL diseñadas para la gestión de docentes en un sistema escolar, imp
       _dni (INT): Número de documento del docente.            
 **Devuelve:** Porcentaje de antigüedad (FLOAT).      
       Escala de porcentajes:      
-            - ***0 a 5 años: 0.5%***      
-            - ***5 a 10 años: 0.75%***      
-            - ***10 a 15 años: 1.0%***      
-            - ***15 a 20 años: 1.25%***      
-            - ***Más de 20 años: 1.5%***      
+                   - ***0 a 5 años: 0.5%***      
+                   - ***5 a 10 años: 0.75%***      
+                   - ***10 a 15 años: 1.0%***      
+                   - ***15 a 20 años: 1.25%***      
+                   - ***Más de 20 años: 1.5%***      
 
+### 4. fx_mot_baja
+**Descripción:**      
+      - Devuelve una descripción textual del motivo de baja de un docente según un código numérico.
+**Parámetros:**      
+      - _mot (INT): Código del motivo de baja.      
+**Devuelve:**      
+Descripción del motivo (VARCHAR(200)).      
+**Motivos:**            
+       / 1: Renuncia por causas particulares.      
+       / 5: Jubilación (artículo 74 - Provincia).            
+       / 7: Jubilación ANSES.            
+       / 99: Fallecimiento.    
