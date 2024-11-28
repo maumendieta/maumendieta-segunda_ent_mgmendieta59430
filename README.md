@@ -22,14 +22,12 @@ Por otro lado se presenta la carpeta `Objetos`, la cual contiene los scripts de 
 
 ### TRIGGERS
 
-
 ### STORE PROCEDURES
  
 
-### FUNCTIONS
-Funciones SQL diseñadas para la gestión de docentes en un sistema escolar, implementadas en MySQL. A continuación, se detalla la funcionalidad de cada función incluida.
-
-## Funciones Incluidas
+### FUNCTIONS - Funciones Incluidas
+Funciones SQL diseñadas para la gestión de docentes en un sistema escolar. 
+A continuación, se detalla la funcionalidad de cada función incluida. 
 
 ### 1. `fx_empleado_horas`      
 **Descripción:**             
@@ -66,7 +64,7 @@ Funciones SQL diseñadas para la gestión de docentes en un sistema escolar, imp
 
 ### 4. fx_mot_baja
 **Descripción:**      
-      - Devuelve una descripción textual del motivo de baja de un docente según un código numérico.
+      - Devuelve una descripción textual del motivo de baja de un docente según un código numérico.    
 **Parámetros:**      
       - _mot (INT): Código del motivo de baja.      
 **Devuelve:**      
