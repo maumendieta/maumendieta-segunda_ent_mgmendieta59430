@@ -12,6 +12,9 @@
 En la presente entrega se presenta el desarrollo de inserción de datos en las tablas creadas la primer entrega de la base de datos LIQUI_ESCUELA.
 Además se explica el desarrollo de los objetos que comienzan a conformar el Proyecto.
 
+La entrega está organizada en Carpetas, para poder organizar el trabajo realizado. 
+Por un lado se encuentra la carpeta Inserts que contiene los Script de inserción y los CSV que se utilizaron para la carga.
+Por otro lado se presenta la carpeta Objetos, la cual contiene los scripts de creación de Triggers, Procedimientos, Vistas y Funciones.
 
 ## OBJETOS
 
