@@ -22,7 +22,7 @@ Por otro lado se presenta la carpeta `Objetos`, la cual contiene los scripts de 
 Este repositorio contiene definiciones de vistas SQL diseñadas para facilitar la gestión de empleados, cargos y su relación con otras entidades dentro de un sistema escolar. 
 Para la combinación de tablas se utilizaron JOINS.
 
-### 1. EMPLEADO POR BANCO: `vw_empleadoxbanco`
+## 1. EMPLEADO POR BANCO: `vw_empleadoxbanco`
 
 **Descripción:**  
 Lista a los empleados agrupados por el banco en el que tienen su cuenta. Incluye información detallada como sucursal y número de cuenta.  
@@ -35,7 +35,7 @@ Lista a los empleados agrupados por el banco en el que tienen su cuenta. Incluye
 - `cuenta_banco`: Número de cuenta bancaria.  
 
 
-### 2. CANTIDAD DE HORAS POR EMPLEADO: `vw_horasxemp`  
+## 2. CANTIDAD DE HORAS POR EMPLEADO: `vw_horasxemp`  
 
 **Descripción:**  
 Calcula el total de horas asignadas a cada empleado en sus cargos. 
@@ -47,7 +47,7 @@ Calcula el total de horas asignadas a cada empleado en sus cargos.
 - `total_hs`: Total de horas asignadas.
 
 
-### 3. ESTADO ACTUAL DEL CARGO: `vw_estado_cargo`    
+## 3. ESTADO ACTUAL DEL CARGO: `vw_estado_cargo`    
 
 **Descripción:**    
 Muestra el estado de cada cargo (OCUPADO o VACANTE) y su relación con empleados, junto con detalles adicionales sobre las horas y la denominación del cargo.
@@ -62,7 +62,7 @@ Muestra el estado de cada cargo (OCUPADO o VACANTE) y su relación con empleados
 - `estado_cargo`: Estado del cargo (OCUPADO o VACANTE).
 
 
-### 4. EMPLEADOS POR AREA: `vw_empleadoxarea`
+## 4. EMPLEADOS POR AREA: `vw_empleadoxarea`
 
 **Descripción:**    
 Lista empleados según el área en la que trabajan, agrupados por las escuelas a las que pertenecen.
@@ -75,7 +75,7 @@ Lista empleados según el área en la que trabajan, agrupados por las escuelas a
 ---
   
 ### :clipboard: TRIGGERS
-### 1. VERIFICADOR DE INCOMPATIBILIDAD: `tg_incomp_emp`  
+## 1. VERIFICADOR DE INCOMPATIBILIDAD: `tg_incomp_emp`  
 
 **Descripción:**  
 Este trigger controla la incompatibilidad horaria al supervisar la cantidad de horas activas de un empleado antes de asignar un nuevo cargo.
@@ -94,7 +94,7 @@ Si el límite es excedido, genera un error con el mensaje: `"El agente, con esta
 **Uso:**    
 Este trigger garantiza que un empleado no exceda las horas máximas asignadas al momento de ser designado en un nuevo cargo.
 
-### 2. INSPECCIONA LA DESIGNACION DE UN REEMPLAZANTE: `tg_des_reemp`
+## 2. INSPECCIONA LA DESIGNACION DE UN REEMPLAZANTE: `tg_des_reemp`
 
 **Descripción:**  
 Este trigger impide la designación de un reemplazante en un cargo si no hay un titular previamente asignado.
@@ -117,7 +117,7 @@ Este trigger asegura la consistencia en la gestión de cargos, garantizando que 
 
 ### :clipboard: STORE PROCEDURES
 
-## 📜 PROCEDIMIENTO - BUSCA EMPLEADO: `pd_busca_empleado`
+## 📜 1 - BUSCA EMPLEADO: `pd_busca_empleado`
 
 ### Descripción
 Este procedimiento busca el ID de un empleado en la tabla `empleado` utilizando su DNI como referencia. Es útil como paso intermedio en otras operaciones que requieren el `id_empleado` para actualizar o consultar información relacionada.
@@ -132,7 +132,7 @@ Este procedimiento busca el ID de un empleado en la tabla `empleado` utilizando 
 3. En caso de no encontrar un resultado, `emp_id` no será modificado (puede ser manejado por lógica externa).
 
 
-## 📜 PROCEDIMIENTO - BAJA EMPLEADO: `pd_baja_empleado`
+## 📜 2 - BAJA EMPLEADO: `pd_baja_empleado`
 
 ### Descripción
 Este procedimiento actualiza la fecha de baja y agrega un motivo detallado en el registro de un empleado en la tabla `empleado`. Utiliza la función `fx_mot_baja` para determinar el texto descriptivo del motivo de baja y el procedimiento `pd_busca_empleado` para localizar al empleado por su DNI.
@@ -154,7 +154,7 @@ Este procedimiento actualiza la fecha de baja y agrega un motivo detallado en el
 
 ### :clipboard: FUNCTIONS - Funciones Incluidas 
 
-### 1. CALCULA LA CANTIDAD DE HORAS POR EMPLEADO: `fx_empleado_horas`      
+## 1. CALCULA LA CANTIDAD DE HORAS POR EMPLEADO: `fx_empleado_horas`      
 **Descripción:**             
       - Calcula la cantidad total de horas asignadas a un docente según su número de documento (DNI).        
 
@@ -168,7 +168,7 @@ Este procedimiento actualiza la fecha de baja y agrega un motivo detallado en el
       - Si el docente no existe, lanza un error con el mensaje: `"DOCENTE INEXISTENTE"`.      
 
 
-### 2. CALCULA ANTIGUEDAD DEL EMPLEADO: `fx_calc_ant`      
+## 2. CALCULA ANTIGUEDAD DEL EMPLEADO: `fx_calc_ant`      
 **Descripción:**          
     - Calcula la antigüedad en años de un docente a partir de su fecha de ingreso.      
 
@@ -182,7 +182,7 @@ Este procedimiento actualiza la fecha de baja y agrega un motivo detallado en el
     - Si no hay fecha de ingreso registrada, devuelve `NULL`.      
 
 
-### 3. PORCENTAJE DE ANTIGUEDAD: `fx_porc_ant`      
+## 3. PORCENTAJE DE ANTIGUEDAD: `fx_porc_ant`      
 **Descripción:**      
       - Calcula el porcentaje de antigüedad aplicable al sueldo de un docente, basado en su antigüedad.      
 
@@ -197,7 +197,7 @@ Este procedimiento actualiza la fecha de baja y agrega un motivo detallado en el
                    / ***15 a 20 años: 1.25%***      
                    / ***Más de 20 años: 1.5%***      
 
-### 4. MOTIVO DE BAJA: `fx_mot_baja`
+## 4. MOTIVO DE BAJA: `fx_mot_baja`
 **Descripción:**      
       - Devuelve una descripción textual del motivo de baja de un docente según un código numérico.    
 
