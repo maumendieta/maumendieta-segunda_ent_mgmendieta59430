@@ -1,2 +1,2 @@
-# maumendieta-segunda_ent_mgmendieta59430
+# SEGUNDA ENTREGA
 Segunda Entrega del Curso SQL - Coderhouse
