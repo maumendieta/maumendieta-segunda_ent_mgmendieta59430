@@ -36,26 +36,36 @@ Funciones SQL diseñadas para la gestión de docentes en un sistema escolar, imp
 
 ## 📂 Funciones Incluidas
 
-### 1. `fx_empleado_horas`
-**Descripción:** 
-      - Calcula la cantidad total de horas asignadas a un docente según su número de documento (DNI).  
-**Parámetros:**
-      - `_dni` (`INT`): Número de documento del docente.  
-**Devuelve:**  
-      - Total de horas (`INT`).  
-**Control de errores:**  
-      - Si el docente no existe, lanza un error con el mensaje: `"DOCENTE INEXISTENTE"`.
+### 1. `fx_empleado_horas`      
+**Descripción:**             
+      - Calcula la cantidad total de horas asignadas a un docente según su número de documento (DNI).        
+**Parámetros:**                  
+      - `_dni` (`INT`): Número de documento del docente.        
+**Devuelve:**                    
+      - Total de horas (`INT`).        
+**Control de errores:**                    
+      - Si el docente no existe, lanza un error con el mensaje: `"DOCENTE INEXISTENTE"`.      
 
-### 2. `fx_calc_ant`
-**Descripción:**
-    - Calcula la antigüedad en años de un docente a partir de su fecha de ingreso.
-**Parámetros:**
-    - _dni (`INT`): Número de documento del docente.
-**Devuelve:**
-    - Antigüedad en años (`INT`).
-**Notas:**
-    - Si no hay fecha de ingreso registrada, devuelve `NULL`.
+### 2. `fx_calc_ant`      
+**Descripción:**          
+    - Calcula la antigüedad en años de un docente a partir de su fecha de ingreso.      
+**Parámetros:**          
+    - _dni (`INT`): Número de documento del docente.      
+**Devuelve:**          
+    - Antigüedad en años (`INT`).      
+**Notas:**          
+    - Si no hay fecha de ingreso registrada, devuelve `NULL`.      
 
+### 3. fx_porc_ant      
+**Descripción:**      
+      - Calcula el porcentaje de antigüedad aplicable al sueldo de un docente, basado en su antigüedad.      
+**Parámetros:**            
+      _dni (INT): Número de documento del docente.            
+**Devuelve:** Porcentaje de antigüedad (FLOAT).      
+      Escala de porcentajes:      
+            - ***0 a 5 años: 0.5%***      
+            - ***5 a 10 años: 0.75%***      
+            - ***10 a 15 años: 1.0%***      
+            - ***15 a 20 años: 1.25%***      
+            - ***Más de 20 años: 1.5%***      
 
-## 
-## 
