@@ -22,6 +22,38 @@ Por otro lado se presenta la carpeta `Objetos`, la cual contiene los scripts de 
 
 ### TRIGGERS
 
+📂 Triggers Incluidos
+### 1. `tg_incomp_emp`  
+**Descripción:**  
+Este trigger controla la incompatibilidad horaria al supervisar la cantidad de horas activas de un empleado antes de asignar un nuevo cargo.
+Si el total de horas (actuales + nuevas) supera el límite permitido (50 horas), se bloquea la inserción y se lanza un mensaje de error.
+
+**Eventos:**  
+Tabla: emp_cargo  
+Momento: BEFORE INSERT  
+**Lógica:**  
+Calcula las horas actuales del empleado desde la vista vw_horasxemp.
+Obtiene las horas asociadas al nuevo cargo (NEW.id_cargo).
+Verifica si el total de horas supera las 50.
+Si el límite es excedido, genera un error con el mensaje: `"El agente, con esta designación, supera el límite de Horas Permitidas".`
+**Uso:**    
+Este trigger garantiza que un empleado no exceda las horas máximas asignadas al momento de ser designado en un nuevo cargo.
+
+### 2. `tg_des_reemp`
+**Descripción:**  
+Este trigger impide la designación de un reemplazante en un cargo si no hay un titular previamente asignado.
+**Eventos:**  
+Tabla: emp_cargo  
+Momento: BEFORE INSERT  
+**Lógica:**  
+Obtiene el estado actual del cargo desde la vista vw_estado_cargo.
+Los estados posibles son: `"vacante"` o `"ocupado"`.
+Si el cargo está marcado como "vacante" y el tipo de designación (id_sit_revista) corresponde a un reemplazante (3):
+Se bloquea la inserción.
+Se lanza un mensaje de error: `"NO SE PUEDE DESIGNAR REEMPLAZANTE SIN TITULAR DESIGNADO"`.  
+**Uso:**   
+Este trigger asegura la consistencia en la gestión de cargos, garantizando que los reemplazantes solo puedan ser asignados a cargos ocupados por titulares.
+
 ### STORE PROCEDURES
  
 
