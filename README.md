@@ -191,11 +191,11 @@ Este procedimiento actualiza la fecha de baja y agrega un motivo detallado en el
 
 **Devuelve:** Porcentaje de antigüedad (FLOAT).      
       Escala de porcentajes:      
-                   / 0 a 5 años: 0.5%***      
-                   / 5 a 10 años: 0.75%***      
-                   / 10 a 15 años: 1.0%***      
-                   / 15 a 20 años: 1.25%***      
-                   / Más de 20 años: 1.5%***      
+                   / ***0 a 5 años: 0.5%***      
+                   / ***5 a 10 años: 0.75%***      
+                   / ***10 a 15 años: 1.0%***      
+                   / ***15 a 20 años: 1.25%***      
+                   / ***Más de 20 años: 1.5%***      
 
 ### 4. MOTIVO DE BAJA: `fx_mot_baja`
 **Descripción:**      
